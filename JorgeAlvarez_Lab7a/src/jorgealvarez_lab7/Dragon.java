@@ -13,8 +13,8 @@ public class Dragon extends Guerrero {
 
     @Override
     public Guerrero Atacar(Guerrero Enemigo) {
-        Enemigo.setDefensa((float) (Enemigo.getDefensa()-.15*Enemigo.getDefensa()));
         Enemigo.setSalud((float) (Enemigo.getSalud()-this.getAtaque()*.35-Enemigo.getDefensa()));
+        Enemigo.setDefensa((float) (Enemigo.getDefensa()-.15*Enemigo.getDefensa()));
         return Enemigo;
     }
 

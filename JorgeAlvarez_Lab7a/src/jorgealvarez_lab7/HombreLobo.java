@@ -13,7 +13,8 @@ public class HombreLobo extends Guerrero {
 
     @Override
     public Guerrero Atacar(Guerrero Enemigo) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Enemigo.setSalud(this.getAtaque()-Enemigo.getDefensa());
+        return Enemigo;
     }
 
 }

@@ -100,15 +100,15 @@ public class VentanaPrincipalLab7 extends javax.swing.JFrame {
         ActualizarControlesModificarBt = new javax.swing.JButton();
         EliminarModificarBt = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
-        jTabbedPane2 = new javax.swing.JTabbedPane();
+        BatallasTp = new javax.swing.JTabbedPane();
         jPanel6 = new javax.swing.JPanel();
-        RealizarVentaNuevaVentaBt = new javax.swing.JButton();
+        ComenzarBatallas = new javax.swing.JButton();
         Guerrero1BatallasCb = new javax.swing.JComboBox<>();
         jLabel7 = new javax.swing.JLabel();
         Guerrero2BatallasCb = new javax.swing.JComboBox<>();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
         AgregarBatallaRealizarBatallasBt = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        TablaBatallas = new javax.swing.JTable();
         jPanel7 = new javax.swing.JPanel();
         jScrollPane10 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
@@ -351,7 +351,7 @@ public class VentanaPrincipalLab7 extends javax.swing.JFrame {
                         .addComponent(HombreLoboAgregarBt, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(FenixAgregarBt, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 135, Short.MAX_VALUE))
                     .addComponent(AlumnoAgregarBt, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(674, Short.MAX_VALUE))
+                .addContainerGap(722, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -394,7 +394,7 @@ public class VentanaPrincipalLab7 extends javax.swing.JFrame {
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 775, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4))
-                .addContainerGap(27, Short.MAX_VALUE))
+                .addContainerGap(75, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -437,7 +437,7 @@ public class VentanaPrincipalLab7 extends javax.swing.JFrame {
                 .addComponent(ActualizarControlesModificarBt, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(EliminarModificarBt, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(205, Short.MAX_VALUE))
+                .addContainerGap(253, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -454,10 +454,10 @@ public class VentanaPrincipalLab7 extends javax.swing.JFrame {
 
         PrincipalTp.addTab("Modificar", jPanel3);
 
-        RealizarVentaNuevaVentaBt.setText("Comenzar Batallas");
-        RealizarVentaNuevaVentaBt.addActionListener(new java.awt.event.ActionListener() {
+        ComenzarBatallas.setText("Comenzar Batallas");
+        ComenzarBatallas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                RealizarVentaNuevaVentaBtActionPerformed(evt);
+                ComenzarBatallasActionPerformed(evt);
             }
         });
 
@@ -467,14 +467,22 @@ public class VentanaPrincipalLab7 extends javax.swing.JFrame {
 
         Guerrero2BatallasCb.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        jScrollPane1.setViewportView(jList1);
-
         AgregarBatallaRealizarBatallasBt.setText("Agregar Batalla");
         AgregarBatallaRealizarBatallasBt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 AgregarBatallaRealizarBatallasBtActionPerformed(evt);
             }
         });
+
+        TablaBatallas.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Batalla"
+            }
+        ));
+        jScrollPane2.setViewportView(TablaBatallas);
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -483,19 +491,18 @@ public class VentanaPrincipalLab7 extends javax.swing.JFrame {
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addGap(57, 57, 57)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 446, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel6Layout.createSequentialGroup()
-                                .addComponent(Guerrero1BatallasCb, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel7))
-                            .addComponent(RealizarVentaNuevaVentaBt, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(Guerrero1BatallasCb, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(Guerrero2BatallasCb, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(66, 66, 66)
-                        .addComponent(AgregarBatallaRealizarBatallasBt)))
-                .addContainerGap(141, Short.MAX_VALUE))
+                        .addComponent(jLabel7)
+                        .addGap(18, 18, 18)
+                        .addComponent(Guerrero2BatallasCb, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(49, 49, 49)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(AgregarBatallaRealizarBatallasBt)
+                    .addComponent(ComenzarBatallas, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(161, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -506,14 +513,18 @@ public class VentanaPrincipalLab7 extends javax.swing.JFrame {
                     .addComponent(jLabel7)
                     .addComponent(Guerrero2BatallasCb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(AgregarBatallaRealizarBatallasBt))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 330, Short.MAX_VALUE)
-                .addGap(18, 18, 18)
-                .addComponent(RealizarVentaNuevaVentaBt, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(61, 61, 61))
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(33, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(ComenzarBatallas, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(79, 79, 79))))
         );
 
-        jTabbedPane2.addTab("Realizar Batallas", jPanel6);
+        BatallasTp.addTab("Realizar Batallas", jPanel6);
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -531,7 +542,7 @@ public class VentanaPrincipalLab7 extends javax.swing.JFrame {
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane10, javax.swing.GroupLayout.DEFAULT_SIZE, 786, Short.MAX_VALUE)
+                .addComponent(jScrollPane10, javax.swing.GroupLayout.DEFAULT_SIZE, 834, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel7Layout.setVerticalGroup(
@@ -542,7 +553,7 @@ public class VentanaPrincipalLab7 extends javax.swing.JFrame {
                 .addContainerGap(48, Short.MAX_VALUE))
         );
 
-        jTabbedPane2.addTab("Reportes", jPanel7);
+        BatallasTp.addTab("Reportes", jPanel7);
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -550,14 +561,14 @@ public class VentanaPrincipalLab7 extends javax.swing.JFrame {
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jTabbedPane2)
+                .addComponent(BatallasTp)
                 .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jTabbedPane2)
+                .addComponent(BatallasTp)
                 .addContainerGap())
         );
 
@@ -710,22 +721,32 @@ public class VentanaPrincipalLab7 extends javax.swing.JFrame {
         int pos = ComboBoxModificar.getSelectedIndex();
         if (Guerreros.get(pos) instanceof Alumno) {
             AgregarAlumnoJd.setVisible(true);
+            AgregarAlumnoJd.pack();
+            NombreAgregarAlumnoTf.setText(Guerreros.get(pos).getNombre());
+            NicknameAgregarAlumnoTf.setText(Guerreros.get(pos).getNickname());
+            AtaqueAgregarAlumnoTf.setText(""+Guerreros.get(pos).getAtaque());
+            DefensaAgregarAlumnoTf.setText(""+Guerreros.get(pos).getDefensa());
+            SaludAgregarAlumnoTf.setText(""+Guerreros.get(pos).getSalud());
         } else {
             AgregarGuerreroJd.setVisible(true);
+            AgregarGuerreroJd.pack();
+            NombreAgregarGuerreroTf.setText(Guerreros.get(pos).getNombre());
+            NicknameAgregarGuerreroTf.setText(Guerreros.get(pos).getNickname());
+            AtaqueAgregarGuerreroTf.setText(""+Guerreros.get(pos).getAtaque());
+            DefensaAgregarGuerreroTf.setText(""+Guerreros.get(pos).getDefensa());
+            SaludAgregarGuerreroTf.setText(""+Guerreros.get(pos).getSalud());
         }
     }//GEN-LAST:event_ActualizarControlesModificarBtActionPerformed
 
     private void GuardarMnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GuardarMnActionPerformed
         // TODO add your handling code here:
-        JFileChooser jfc = new JFileChooser();
-        int seleccion = jfc.showSaveDialog(this);
-        File archivo;
-        if (seleccion == JFileChooser.APPROVE_OPTION) {
-            archivo = jfc.getSelectedFile();
-            adm.setlistaGuerreros(Guerreros);
-            adm.setArchivo(archivo);
-            adm.escribirArchivo();
-        }
+
+        File archivo = new File("./Guerreros");
+
+        adm.setlistaGuerreros(Guerreros);
+        adm.setArchivo(archivo);
+        adm.escribirArchivo();
+
     }//GEN-LAST:event_GuardarMnActionPerformed
 
     private void PrincipalTpStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_PrincipalTpStateChanged
@@ -775,21 +796,18 @@ public class VentanaPrincipalLab7 extends javax.swing.JFrame {
 
     private void AbrirMnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AbrirMnActionPerformed
         // TODO add your handling code here:
-        JFileChooser jfc = new JFileChooser();
-        int seleccion = jfc.showOpenDialog(this);
-        File archivo;
-        if (seleccion == JFileChooser.APPROVE_OPTION) {
-            archivo = jfc.getSelectedFile();
-            adm.setArchivo(archivo);
-            adm.cargarArchivoBinario();
-            Guerreros = adm.getlistaGuerreros();
-        }
+        
+        File archivo = new File("./Guerreros");
+        adm.setArchivo(archivo);
+        adm.cargarArchivoBinario();
+        Guerreros = adm.getlistaGuerreros();
+
     }//GEN-LAST:event_AbrirMnActionPerformed
 
     private void EliminarModificarBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminarModificarBtActionPerformed
         // TODO add your handling code here:
-        int seleccion=JOptionPane.showConfirmDialog(this, "¿Está seguro que desea eliminarlo?");
-        if (seleccion==JOptionPane.OK_OPTION) {
+        int seleccion = JOptionPane.showConfirmDialog(this, "¿Está seguro que desea eliminarlo?");
+        if (seleccion == JOptionPane.OK_OPTION) {
             Guerreros.remove(ComboBoxModificar.getSelectedIndex());
         }
     }//GEN-LAST:event_EliminarModificarBtActionPerformed
@@ -853,16 +871,38 @@ public class VentanaPrincipalLab7 extends javax.swing.JFrame {
         AgregarAlumnoJd.pack();
     }//GEN-LAST:event_AlumnoAgregarBtActionPerformed
 
-    private void RealizarVentaNuevaVentaBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RealizarVentaNuevaVentaBtActionPerformed
+    private void ComenzarBatallasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComenzarBatallasActionPerformed
         // TODO add your handling code here:
-
-    }//GEN-LAST:event_RealizarVentaNuevaVentaBtActionPerformed
+        for (Batalla b : Batallas) {
+            b.start();
+        }
+        TablaListar.setModel(new javax.swing.table.DefaultTableModel(
+                new Object[][]{},
+                new String[]{
+                    "Batalla"
+                }
+        ));
+    }//GEN-LAST:event_ComenzarBatallasActionPerformed
 
     private void AgregarBatallaRealizarBatallasBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarBatallaRealizarBatallasBtActionPerformed
         // TODO add your handling code here:
+        Guerrero a;
         Batallas.add(new Batalla(
                 Guerreros.get(Guerrero1BatallasCb.getSelectedIndex()),
                 Guerreros.get(Guerrero2BatallasCb.getSelectedIndex())));
+        TablaListar.setModel(new javax.swing.table.DefaultTableModel(
+                new Object[][]{},
+                new String[]{
+                    "Batalla"
+                }
+        ));
+        DefaultTableModel modelo = (DefaultTableModel) TablaListar.getModel();
+        for (Batalla t : Batallas) {
+            Object[] fila = {
+                t};
+            modelo.addRow(fila);
+        }
+        TablaBatallas.setModel(modelo);
     }//GEN-LAST:event_AgregarBatallaRealizarBatallasBtActionPerformed
 
     /**
@@ -912,8 +952,10 @@ public class VentanaPrincipalLab7 extends javax.swing.JFrame {
     private javax.swing.JButton AlumnoAgregarBt;
     private javax.swing.JTextField AtaqueAgregarAlumnoTf;
     private javax.swing.JTextField AtaqueAgregarGuerreroTf;
+    private javax.swing.JTabbedPane BatallasTp;
     private javax.swing.JTextField CarreraAgregarAlumnoTf;
     private javax.swing.JComboBox<String> ComboBoxModificar;
+    private javax.swing.JButton ComenzarBatallas;
     private javax.swing.JButton ConfirmarAgregarAlumnoBt;
     private javax.swing.JButton ConfirmarAgregarGuerreroJdBt;
     private javax.swing.JTextField DefensaAgregarAlumnoTf;
@@ -935,10 +977,10 @@ public class VentanaPrincipalLab7 extends javax.swing.JFrame {
     private javax.swing.JTextField NombreAgregarGuerreroTf;
     private javax.swing.JTextField NumeroDeCuentaAgregarAlumnoTf;
     private javax.swing.JTabbedPane PrincipalTp;
-    private javax.swing.JButton RealizarVentaNuevaVentaBt;
     private javax.swing.JMenuItem SalirMn;
     private javax.swing.JTextField SaludAgregarAlumnoTf;
     private javax.swing.JTextField SaludAgregarGuerreroTf;
+    private javax.swing.JTable TablaBatallas;
     private javax.swing.JTable TablaListar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -959,7 +1001,6 @@ public class VentanaPrincipalLab7 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JList<String> jList1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel2;
@@ -968,14 +1009,14 @@ public class VentanaPrincipalLab7 extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane10;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane4;
-    private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
     static ArrayList<Guerrero> Guerreros = new ArrayList();
     static ArrayList<Batalla> Batallas = new ArrayList();
+    static ArrayList<Reporte> Reportes = new ArrayList();
     static int Modificar;
     static int Tipo;
     static AdminGuerreros adm = new AdminGuerreros();

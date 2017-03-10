@@ -9,13 +9,7 @@ package jorgealvarez_lab7;
  *
  * @author ofici
  */
-public class Fenix extends Guerrero{
-
-    @Override
-    public Guerrero Atacar(Guerrero Enemigo) {
-        Enemigo.setSalud((float) (this.getAtaque()*.75-Enemigo.getDefensa()));
-        return Enemigo;
-    }
-
+public class Reporte {
+    String reporte;
     
 }

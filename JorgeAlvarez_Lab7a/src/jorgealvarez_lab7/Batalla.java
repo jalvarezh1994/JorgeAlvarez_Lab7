@@ -9,16 +9,26 @@ package jorgealvarez_lab7;
  *
  * @author ofici
  */
-public class Batalla implements Runnable {
+public class Batalla extends Thread{
 
     private Guerrero Guerrero1;
     private Guerrero Guerrero2;
+    private String Bitacora;
 
     @Override
     public void run() {
         while (Guerrero1.getSalud()>0&&Guerrero2.getSalud()>0) {
             Guerrero2=Guerrero1.Atacar(Guerrero2);
             Guerrero1=Guerrero2.Atacar(Guerrero1);
+            System.out.println(this);
+            Bitacora+=this+"\n";
+        }
+        if (Guerrero1.getSalud()>0) {
+            System.out.println("El ganador es: "+Guerrero1);
+            Bitacora+="El ganador es: "+Guerrero1;
+        }else{
+            System.out.println("El ganador es: "+Guerrero2);
+            Bitacora+="El ganador es: "+Guerrero2;
         }
     }
 
@@ -32,7 +42,7 @@ public class Batalla implements Runnable {
 
     @Override
     public String toString() {
-        return Guerrero1.getNickname()+" vs "+Guerrero2.getNickname();
+        return Guerrero1.getNickname()+":"+Guerrero1.getSalud()+" vs "+Guerrero2.getNickname()+":"+Guerrero2.getSalud();
     }
 
     

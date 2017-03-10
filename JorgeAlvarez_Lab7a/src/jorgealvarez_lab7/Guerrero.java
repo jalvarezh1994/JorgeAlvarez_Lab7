@@ -6,6 +6,7 @@
 package jorgealvarez_lab7;
 
 import java.io.Serializable;
+import java.rmi.server.UID;
 
 /**
  *
@@ -15,7 +16,7 @@ public abstract class Guerrero implements Serializable {
 
     private String Nombre, Nickname;
     private float Ataque, Defensa, Salud, Puntos=0;
-
+    
     public Guerrero() {
     }
 
@@ -50,7 +51,7 @@ public abstract class Guerrero implements Serializable {
 
     public void setAtaque(float Ataque) {
         if (Ataque > 200 && Ataque < 300) {
-            this.Salud = Salud;
+            this.Ataque = Ataque;
         }
     }
 
@@ -69,9 +70,7 @@ public abstract class Guerrero implements Serializable {
     }
 
     public void setSalud(float Salud) {
-        if (Salud > 800) {
             this.Salud = Salud;
-        }
     }
 
     public float getPuntos() {

@@ -13,7 +13,9 @@ public class Minotauro extends Guerrero {
 
     @Override
     public Guerrero Atacar(Guerrero Enemigo) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Enemigo.setSalud((float) ((this.getAtaque()*2-Enemigo.getDefensa())*1.5));
+        this.setAtaque((float) (this.getAtaque()*1.1));
+        return Enemigo;
     }
 
 }
