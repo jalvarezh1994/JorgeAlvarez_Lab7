@@ -14,11 +14,6 @@ public class Alumno extends Guerrero {
     private String NumeroDeCuenta, Carrera;
     private int Edad;
 
-    @Override
-    public float Atacar(int E) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
     public String getNumeroDeCuenta() {
         return NumeroDeCuenta;
     }
@@ -42,6 +37,10 @@ public class Alumno extends Guerrero {
     public void setEdad(int Edad) {
         this.Edad = Edad;
     }
-    
-    
+
+    @Override
+    public Guerrero Atacar(Guerrero Enemigo) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 }

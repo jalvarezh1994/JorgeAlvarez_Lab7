@@ -9,11 +9,13 @@ package jorgealvarez_lab7;
  *
  * @author ofici
  */
-public class Dragon extends Guerrero{
+public class Dragon extends Guerrero {
 
     @Override
-    public float Atacar(int E) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public Guerrero Atacar(Guerrero Enemigo) {
+        Enemigo.setDefensa((float) (Enemigo.getDefensa()-.15*Enemigo.getDefensa()));
+        Enemigo.setSalud((float) (Enemigo.getSalud()-this.getAtaque()*.35-Enemigo.getDefensa()));
+        return Enemigo;
     }
-    
+
 }

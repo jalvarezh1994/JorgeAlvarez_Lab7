@@ -103,16 +103,19 @@ public class VentanaPrincipalLab7 extends javax.swing.JFrame {
         jTabbedPane2 = new javax.swing.JTabbedPane();
         jPanel6 = new javax.swing.JPanel();
         RealizarVentaNuevaVentaBt = new javax.swing.JButton();
+        Guerrero1BatallasCb = new javax.swing.JComboBox<>();
+        jLabel7 = new javax.swing.JLabel();
+        Guerrero2BatallasCb = new javax.swing.JComboBox<>();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jList1 = new javax.swing.JList<>();
+        AgregarBatallaRealizarBatallasBt = new javax.swing.JButton();
         jPanel7 = new javax.swing.JPanel();
-        jRadioButton3 = new javax.swing.JRadioButton();
-        jRadioButton4 = new javax.swing.JRadioButton();
         jScrollPane10 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         AbrirMn = new javax.swing.JMenuItem();
         GuardarMn = new javax.swing.JMenuItem();
-        GuardarComoMn = new javax.swing.JMenuItem();
         SalirMn = new javax.swing.JMenuItem();
 
         jLabel8.setText("Ataque");
@@ -451,10 +454,25 @@ public class VentanaPrincipalLab7 extends javax.swing.JFrame {
 
         PrincipalTp.addTab("Modificar", jPanel3);
 
-        RealizarVentaNuevaVentaBt.setText("Realizar Venta");
+        RealizarVentaNuevaVentaBt.setText("Comenzar Batallas");
         RealizarVentaNuevaVentaBt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 RealizarVentaNuevaVentaBtActionPerformed(evt);
+            }
+        });
+
+        Guerrero1BatallasCb.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        jLabel7.setText("vs");
+
+        Guerrero2BatallasCb.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        jScrollPane1.setViewportView(jList1);
+
+        AgregarBatallaRealizarBatallasBt.setText("Agregar Batalla");
+        AgregarBatallaRealizarBatallasBt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AgregarBatallaRealizarBatallasBtActionPerformed(evt);
             }
         });
 
@@ -462,24 +480,40 @@ public class VentanaPrincipalLab7 extends javax.swing.JFrame {
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
-                .addContainerGap(575, Short.MAX_VALUE)
-                .addComponent(RealizarVentaNuevaVentaBt, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(96, 96, 96))
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGap(57, 57, 57)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 446, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel6Layout.createSequentialGroup()
+                                .addComponent(Guerrero1BatallasCb, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel7))
+                            .addComponent(RealizarVentaNuevaVentaBt, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addComponent(Guerrero2BatallasCb, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(66, 66, 66)
+                        .addComponent(AgregarBatallaRealizarBatallasBt)))
+                .addContainerGap(141, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
-                .addContainerGap(268, Short.MAX_VALUE)
+                .addGap(35, 35, 35)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Guerrero1BatallasCb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel7)
+                    .addComponent(Guerrero2BatallasCb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(AgregarBatallaRealizarBatallasBt))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 330, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addComponent(RealizarVentaNuevaVentaBt, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(217, 217, 217))
+                .addGap(61, 61, 61))
         );
 
-        jTabbedPane2.addTab("Nueva venta", jPanel6);
-
-        jRadioButton3.setText("Venta de baleadas");
-
-        jRadioButton4.setText("Ventas de gatos");
+        jTabbedPane2.addTab("Realizar Batallas", jPanel6);
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -496,12 +530,6 @@ public class VentanaPrincipalLab7 extends javax.swing.JFrame {
         jPanel7Layout.setHorizontalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addComponent(jRadioButton3)
-                .addGap(18, 18, 18)
-                .addComponent(jRadioButton4)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanel7Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane10, javax.swing.GroupLayout.DEFAULT_SIZE, 786, Short.MAX_VALUE)
                 .addContainerGap())
@@ -509,11 +537,7 @@ public class VentanaPrincipalLab7 extends javax.swing.JFrame {
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jRadioButton3)
-                    .addComponent(jRadioButton4))
-                .addGap(18, 18, 18)
+                .addGap(61, 61, 61)
                 .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(48, Short.MAX_VALUE))
         );
@@ -558,15 +582,6 @@ public class VentanaPrincipalLab7 extends javax.swing.JFrame {
             }
         });
         jMenu1.add(GuardarMn);
-
-        GuardarComoMn.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_G, java.awt.event.InputEvent.SHIFT_MASK | java.awt.event.InputEvent.CTRL_MASK));
-        GuardarComoMn.setText("Guardar como");
-        GuardarComoMn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                GuardarComoMnActionPerformed(evt);
-            }
-        });
-        jMenu1.add(GuardarComoMn);
 
         SalirMn.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F4, java.awt.event.InputEvent.ALT_MASK));
         SalirMn.setText("Salir");
@@ -616,32 +631,37 @@ public class VentanaPrincipalLab7 extends javax.swing.JFrame {
     //0-Jefe de Cocina 1-Jefe de Baleadas 2-Jefe de Gatos
     private void ConfirmarAgregarAlumnoBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConfirmarAgregarAlumnoBtActionPerformed
         // TODO add your handling code here:
-        int pos;
-        if (Modificar == 0) {
-            Guerreros.add(new Alumno());
-            pos = Guerreros.size() - 1;
-        } else {
-            pos = ComboBoxModificar.getSelectedIndex();
+        try {
+            int pos;
+            if (Modificar == 0) {
+                Guerreros.add(new Alumno());
+                pos = Guerreros.size() - 1;
+            } else {
+                pos = ComboBoxModificar.getSelectedIndex();
+            }
+
+            Guerreros.get(pos).setNombre(NombreAgregarAlumnoTf.getText());
+            Guerreros.get(pos).setNickname(NicknameAgregarAlumnoTf.getText());
+            try {
+                Guerreros.get(pos).setAtaque(Float.parseFloat(AtaqueAgregarAlumnoTf.getText()));
+            } catch (Exception e) {
+            }
+            try {
+                Guerreros.get(pos).setDefensa(Float.parseFloat(DefensaAgregarAlumnoTf.getText()));
+            } catch (Exception e) {
+            }
+            try {
+                Guerreros.get(pos).setSalud(Float.parseFloat(SaludAgregarAlumnoTf.getText()));
+            } catch (Exception e) {
+            }
+            ((Alumno) Guerreros.get(pos)).setNumeroDeCuenta(NumeroDeCuentaAgregarAlumnoTf.getText());
+            ((Alumno) Guerreros.get(pos)).setCarrera(CarreraAgregarAlumnoTf.getText());
+            ((Alumno) Guerreros.get(pos)).setEdad(Integer.parseInt(EdadAgregarAlumnoTf.getText()));
+            AgregarAlumnoJd.dispose();
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(AgregarAlumnoJd, "Llene todo el formulario");
         }
 
-        Guerreros.get(pos).setNombre(NombreAgregarAlumnoTf.getText());
-        Guerreros.get(pos).setNickname(NicknameAgregarAlumnoTf.getText());
-        try {
-            Guerreros.get(pos).setAtaque(Float.parseFloat(AtaqueAgregarAlumnoTf.getText()));
-        } catch (Exception e) {
-        }
-        try {
-            Guerreros.get(pos).setDefensa(Float.parseFloat(DefensaAgregarAlumnoTf.getText()));
-        } catch (Exception e) {
-        }
-        try {
-            Guerreros.get(pos).setSalud(Float.parseFloat(SaludAgregarAlumnoTf.getText()));
-        } catch (Exception e) {
-        }
-        ((Alumno) Guerreros.get(pos)).setNumeroDeCuenta(NumeroDeCuentaAgregarAlumnoTf.getText());
-        ((Alumno) Guerreros.get(pos)).setCarrera(CarreraAgregarAlumnoTf.getText());
-        ((Alumno) Guerreros.get(pos)).setEdad(Integer.parseInt(EdadAgregarAlumnoTf.getText()));
-        AgregarAlumnoJd.dispose();
     }//GEN-LAST:event_ConfirmarAgregarAlumnoBtActionPerformed
 
     private void HombreLoboAgregarBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HombreLoboAgregarBtActionPerformed
@@ -683,21 +703,29 @@ public class VentanaPrincipalLab7 extends javax.swing.JFrame {
         AgregarGuerreroJd.pack();
     }//GEN-LAST:event_FenixAgregarBtActionPerformed
 
-    
+
     private void ActualizarControlesModificarBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ActualizarControlesModificarBtActionPerformed
         // TODO add your handling code here:
         Modificar = 1;
         int pos = ComboBoxModificar.getSelectedIndex();
-        if (Guerreros.get(pos)instanceof Alumno) {
+        if (Guerreros.get(pos) instanceof Alumno) {
             AgregarAlumnoJd.setVisible(true);
-        }else{
+        } else {
             AgregarGuerreroJd.setVisible(true);
         }
     }//GEN-LAST:event_ActualizarControlesModificarBtActionPerformed
 
     private void GuardarMnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GuardarMnActionPerformed
         // TODO add your handling code here:
-
+        JFileChooser jfc = new JFileChooser();
+        int seleccion = jfc.showSaveDialog(this);
+        File archivo;
+        if (seleccion == JFileChooser.APPROVE_OPTION) {
+            archivo = jfc.getSelectedFile();
+            adm.setlistaGuerreros(Guerreros);
+            adm.setArchivo(archivo);
+            adm.escribirArchivo();
+        }
     }//GEN-LAST:event_GuardarMnActionPerformed
 
     private void PrincipalTpStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_PrincipalTpStateChanged
@@ -728,67 +756,88 @@ public class VentanaPrincipalLab7 extends javax.swing.JFrame {
             }
             ComboBoxModificar.setModel(modelo);
         }
+        if (PrincipalTp.getSelectedIndex() == 3) {
+            DefaultComboBoxModel modelo = new DefaultComboBoxModel();
+            DefaultComboBoxModel modelo1 = new DefaultComboBoxModel();
+            for (Guerrero t : Guerreros) {
+                modelo.addElement(t);
+                modelo1.addElement(t);
+            }
+            Guerrero1BatallasCb.setModel(modelo);
+            Guerrero2BatallasCb.setModel(modelo1);
+        }
     }//GEN-LAST:event_PrincipalTpStateChanged
 
     private void SalirMnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalirMnActionPerformed
         // TODO add your handling code here:
         this.dispose();
     }//GEN-LAST:event_SalirMnActionPerformed
-    
+
     private void AbrirMnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AbrirMnActionPerformed
         // TODO add your handling code here:
-        
+        JFileChooser jfc = new JFileChooser();
+        int seleccion = jfc.showOpenDialog(this);
+        File archivo;
+        if (seleccion == JFileChooser.APPROVE_OPTION) {
+            archivo = jfc.getSelectedFile();
+            adm.setArchivo(archivo);
+            adm.cargarArchivoBinario();
+            Guerreros = adm.getlistaGuerreros();
+        }
     }//GEN-LAST:event_AbrirMnActionPerformed
 
     private void EliminarModificarBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminarModificarBtActionPerformed
         // TODO add your handling code here:
-        
+        int seleccion=JOptionPane.showConfirmDialog(this, "¿Está seguro que desea eliminarlo?");
+        if (seleccion==JOptionPane.OK_OPTION) {
+            Guerreros.remove(ComboBoxModificar.getSelectedIndex());
+        }
     }//GEN-LAST:event_EliminarModificarBtActionPerformed
-
-    private void GuardarComoMnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GuardarComoMnActionPerformed
-        // TODO add your handling code here:
-        
-    }//GEN-LAST:event_GuardarComoMnActionPerformed
 
     private void ConfirmarAgregarGuerreroJdBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConfirmarAgregarGuerreroJdBtActionPerformed
         // TODO add your handling code here:
-        int pos;
-        if (Modificar == 0) {
-            if (Tipo == 0) {
-                Guerreros.add(new Dragon());
-            }
-            if (Tipo == 1) {
-                Guerreros.add(new Fenix());
-            }
-            if (Tipo == 2) {
-                Guerreros.add(new HombreLobo());
-            }
-            if (Tipo == 3) {
-                Guerreros.add(new Minotauro());
-            }
-            if (Tipo == 4) {
-                Guerreros.add(new Alumno());
-            }
-            pos = Guerreros.size() - 1;
-        } else {
-            pos = ComboBoxModificar.getSelectedIndex();
-        }
+        try {
 
-        Guerreros.get(pos).setNombre(NombreAgregarGuerreroTf.getText());
-        Guerreros.get(pos).setNickname(NicknameAgregarGuerreroTf.getText());
-        try {
-            Guerreros.get(pos).setAtaque(Float.parseFloat(AtaqueAgregarGuerreroTf.getText()));
+            int pos;
+            if (Modificar == 0) {
+                if (Tipo == 0) {
+                    Guerreros.add(new Dragon());
+                }
+                if (Tipo == 1) {
+                    Guerreros.add(new Fenix());
+                }
+                if (Tipo == 2) {
+                    Guerreros.add(new HombreLobo());
+                }
+                if (Tipo == 3) {
+                    Guerreros.add(new Minotauro());
+                }
+                if (Tipo == 4) {
+                    Guerreros.add(new Alumno());
+                }
+                pos = Guerreros.size() - 1;
+            } else {
+                pos = ComboBoxModificar.getSelectedIndex();
+            }
+
+            Guerreros.get(pos).setNombre(NombreAgregarGuerreroTf.getText());
+            Guerreros.get(pos).setNickname(NicknameAgregarGuerreroTf.getText());
+            try {
+                Guerreros.get(pos).setAtaque(Float.parseFloat(AtaqueAgregarGuerreroTf.getText()));
+            } catch (Exception e) {
+            }
+            try {
+                Guerreros.get(pos).setDefensa(Float.parseFloat(DefensaAgregarGuerreroTf.getText()));
+            } catch (Exception e) {
+            }
+            try {
+                Guerreros.get(pos).setSalud(Float.parseFloat(SaludAgregarGuerreroTf.getText()));
+            } catch (Exception e) {
+            }
+            AgregarGuerreroJd.dispose();
         } catch (Exception e) {
+            JOptionPane.showMessageDialog(AgregarGuerreroJd, "Llene todo el formulario");
         }
-        try {
-            Guerreros.get(pos).setDefensa(Float.parseFloat(DefensaAgregarGuerreroTf.getText()));
-        } catch (Exception e) {
-        }
-        try {
-            Guerreros.get(pos).setSalud(Float.parseFloat(SaludAgregarGuerreroTf.getText()));
-        } catch (Exception e) {
-        }
-        AgregarGuerreroJd.dispose();
     }//GEN-LAST:event_ConfirmarAgregarGuerreroJdBtActionPerformed
 
     private void AlumnoAgregarBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AlumnoAgregarBtActionPerformed
@@ -806,8 +855,15 @@ public class VentanaPrincipalLab7 extends javax.swing.JFrame {
 
     private void RealizarVentaNuevaVentaBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RealizarVentaNuevaVentaBtActionPerformed
         // TODO add your handling code here:
-        
+
     }//GEN-LAST:event_RealizarVentaNuevaVentaBtActionPerformed
+
+    private void AgregarBatallaRealizarBatallasBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarBatallaRealizarBatallasBtActionPerformed
+        // TODO add your handling code here:
+        Batallas.add(new Batalla(
+                Guerreros.get(Guerrero1BatallasCb.getSelectedIndex()),
+                Guerreros.get(Guerrero2BatallasCb.getSelectedIndex())));
+    }//GEN-LAST:event_AgregarBatallaRealizarBatallasBtActionPerformed
 
     /**
      * @param args the command line arguments
@@ -851,6 +907,7 @@ public class VentanaPrincipalLab7 extends javax.swing.JFrame {
     private javax.swing.JMenuItem AbrirMn;
     private javax.swing.JButton ActualizarControlesModificarBt;
     private javax.swing.JDialog AgregarAlumnoJd;
+    private javax.swing.JButton AgregarBatallaRealizarBatallasBt;
     private javax.swing.JDialog AgregarGuerreroJd;
     private javax.swing.JButton AlumnoAgregarBt;
     private javax.swing.JTextField AtaqueAgregarAlumnoTf;
@@ -865,8 +922,9 @@ public class VentanaPrincipalLab7 extends javax.swing.JFrame {
     private javax.swing.JTextField EdadAgregarAlumnoTf;
     private javax.swing.JButton EliminarModificarBt;
     private javax.swing.JButton FenixAgregarBt;
-    private javax.swing.JMenuItem GuardarComoMn;
     private javax.swing.JMenuItem GuardarMn;
+    private javax.swing.JComboBox<String> Guerrero1BatallasCb;
+    private javax.swing.JComboBox<String> Guerrero2BatallasCb;
     private javax.swing.JButton HombreLoboAgregarBt;
     private javax.swing.ButtonGroup ListarBg;
     private javax.swing.JButton MinotauroAgregarBt;
@@ -898,8 +956,10 @@ public class VentanaPrincipalLab7 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel48;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JList<String> jList1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel2;
@@ -908,14 +968,15 @@ public class VentanaPrincipalLab7 extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
-    private javax.swing.JRadioButton jRadioButton3;
-    private javax.swing.JRadioButton jRadioButton4;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
     static ArrayList<Guerrero> Guerreros = new ArrayList();
+    static ArrayList<Batalla> Batallas = new ArrayList();
     static int Modificar;
     static int Tipo;
+    static AdminGuerreros adm = new AdminGuerreros();
 }

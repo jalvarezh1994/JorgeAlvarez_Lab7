@@ -9,11 +9,11 @@ package jorgealvarez_lab7;
  *
  * @author ofici
  */
-public class HombreLobo extends Guerrero{
+public class HombreLobo extends Guerrero {
 
     @Override
-    public float Atacar(int E) {
+    public Guerrero Atacar(Guerrero Enemigo) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-        
+
 }

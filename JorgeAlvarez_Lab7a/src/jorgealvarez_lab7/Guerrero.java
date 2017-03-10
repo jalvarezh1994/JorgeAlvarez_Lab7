@@ -87,6 +87,6 @@ public abstract class Guerrero implements Serializable {
         return Nombre + ": " + Nickname;
     }
 
-    public abstract float Atacar(int E);
+    public abstract Guerrero Atacar(Guerrero Enemigo);
 
 }
