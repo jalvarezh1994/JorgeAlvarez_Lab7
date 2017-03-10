@@ -624,18 +624,18 @@ public class VentanaPrincipalLab7 extends javax.swing.JFrame {
             pos = ComboBoxModificar.getSelectedIndex();
         }
 
-        Guerreros.get(pos).setNombre(NombreAgregarGuerreroTf.getText());
-        Guerreros.get(pos).setNickname(NicknameAgregarGuerreroTf.getText());
+        Guerreros.get(pos).setNombre(NombreAgregarAlumnoTf.getText());
+        Guerreros.get(pos).setNickname(NicknameAgregarAlumnoTf.getText());
         try {
-            Guerreros.get(pos).setAtaque(Float.parseFloat(AtaqueAgregarGuerreroTf.getText()));
+            Guerreros.get(pos).setAtaque(Float.parseFloat(AtaqueAgregarAlumnoTf.getText()));
         } catch (Exception e) {
         }
         try {
-            Guerreros.get(pos).setDefensa(Float.parseFloat(DefensaAgregarGuerreroTf.getText()));
+            Guerreros.get(pos).setDefensa(Float.parseFloat(DefensaAgregarAlumnoTf.getText()));
         } catch (Exception e) {
         }
         try {
-            Guerreros.get(pos).setSalud(Float.parseFloat(SaludAgregarGuerreroTf.getText()));
+            Guerreros.get(pos).setSalud(Float.parseFloat(SaludAgregarAlumnoTf.getText()));
         } catch (Exception e) {
         }
         ((Alumno) Guerreros.get(pos)).setNumeroDeCuenta(NumeroDeCuentaAgregarAlumnoTf.getText());
@@ -734,8 +734,7 @@ public class VentanaPrincipalLab7 extends javax.swing.JFrame {
         // TODO add your handling code here:
         this.dispose();
     }//GEN-LAST:event_SalirMnActionPerformed
-    String DirectorioAbrir = "";
-    Object Ruta;
+    
     private void AbrirMnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AbrirMnActionPerformed
         // TODO add your handling code here:
         
@@ -917,6 +916,6 @@ public class VentanaPrincipalLab7 extends javax.swing.JFrame {
     private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
     static ArrayList<Guerrero> Guerreros = new ArrayList();
-    static int Modificar, posModificar;
+    static int Modificar;
     static int Tipo;
 }
