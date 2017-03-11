@@ -14,7 +14,8 @@ public class Batalla extends Thread{
     private Guerrero Guerrero1;
     private Guerrero Guerrero2;
     private String Bitacora;
-
+    private AdminReportes adm=new AdminReportes();
+    
     @Override
     public void run() {
         while (Guerrero1.getSalud()>0&&Guerrero2.getSalud()>0) {
@@ -26,9 +27,13 @@ public class Batalla extends Thread{
         if (Guerrero1.getSalud()>0) {
             System.out.println("El ganador es: "+Guerrero1);
             Bitacora+="El ganador es: "+Guerrero1;
+            adm.cargarArchivoBinario();
+            adm.getlistaReportes().add(new Reporte(Guerrero1, Guerrero2, Bitacora));
         }else{
             System.out.println("El ganador es: "+Guerrero2);
             Bitacora+="El ganador es: "+Guerrero2;
+            adm.cargarArchivoBinario();
+            adm.getlistaReportes().add(new Reporte(Guerrero1, Guerrero2, Bitacora));
         }
     }
 

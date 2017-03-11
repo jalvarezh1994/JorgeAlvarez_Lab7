@@ -15,6 +15,8 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.DefaultListModel;
 import javax.swing.JColorChooser;
@@ -111,7 +113,7 @@ public class VentanaPrincipalLab7 extends javax.swing.JFrame {
         TablaBatallas = new javax.swing.JTable();
         jPanel7 = new javax.swing.JPanel();
         jScrollPane10 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        Tabla = new javax.swing.JTable();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         AbrirMn = new javax.swing.JMenuItem();
@@ -454,6 +456,12 @@ public class VentanaPrincipalLab7 extends javax.swing.JFrame {
 
         PrincipalTp.addTab("Modificar", jPanel3);
 
+        BatallasTp.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                BatallasTpStateChanged(evt);
+            }
+        });
+
         ComenzarBatallas.setText("Comenzar Batallas");
         ComenzarBatallas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -526,7 +534,7 @@ public class VentanaPrincipalLab7 extends javax.swing.JFrame {
 
         BatallasTp.addTab("Realizar Batallas", jPanel6);
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        Tabla.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -534,7 +542,7 @@ public class VentanaPrincipalLab7 extends javax.swing.JFrame {
                 "", "", "", " "
             }
         ));
-        jScrollPane10.setViewportView(jTable1);
+        jScrollPane10.setViewportView(Tabla);
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
@@ -724,17 +732,17 @@ public class VentanaPrincipalLab7 extends javax.swing.JFrame {
             AgregarAlumnoJd.pack();
             NombreAgregarAlumnoTf.setText(Guerreros.get(pos).getNombre());
             NicknameAgregarAlumnoTf.setText(Guerreros.get(pos).getNickname());
-            AtaqueAgregarAlumnoTf.setText(""+Guerreros.get(pos).getAtaque());
-            DefensaAgregarAlumnoTf.setText(""+Guerreros.get(pos).getDefensa());
-            SaludAgregarAlumnoTf.setText(""+Guerreros.get(pos).getSalud());
+            AtaqueAgregarAlumnoTf.setText("" + Guerreros.get(pos).getAtaque());
+            DefensaAgregarAlumnoTf.setText("" + Guerreros.get(pos).getDefensa());
+            SaludAgregarAlumnoTf.setText("" + Guerreros.get(pos).getSalud());
         } else {
             AgregarGuerreroJd.setVisible(true);
             AgregarGuerreroJd.pack();
             NombreAgregarGuerreroTf.setText(Guerreros.get(pos).getNombre());
             NicknameAgregarGuerreroTf.setText(Guerreros.get(pos).getNickname());
-            AtaqueAgregarGuerreroTf.setText(""+Guerreros.get(pos).getAtaque());
-            DefensaAgregarGuerreroTf.setText(""+Guerreros.get(pos).getDefensa());
-            SaludAgregarGuerreroTf.setText(""+Guerreros.get(pos).getSalud());
+            AtaqueAgregarGuerreroTf.setText("" + Guerreros.get(pos).getAtaque());
+            DefensaAgregarGuerreroTf.setText("" + Guerreros.get(pos).getDefensa());
+            SaludAgregarGuerreroTf.setText("" + Guerreros.get(pos).getSalud());
         }
     }//GEN-LAST:event_ActualizarControlesModificarBtActionPerformed
 
@@ -796,12 +804,14 @@ public class VentanaPrincipalLab7 extends javax.swing.JFrame {
 
     private void AbrirMnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AbrirMnActionPerformed
         // TODO add your handling code here:
-        
+
         File archivo = new File("./Guerreros");
         adm.setArchivo(archivo);
         adm.cargarArchivoBinario();
         Guerreros = adm.getlistaGuerreros();
-
+        AdminReportes adm2=new AdminReportes();
+        adm2.cargarArchivoBinario();
+        Reportes=adm2.getlistaReportes();
     }//GEN-LAST:event_AbrirMnActionPerformed
 
     private void EliminarModificarBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminarModificarBtActionPerformed
@@ -885,8 +895,7 @@ public class VentanaPrincipalLab7 extends javax.swing.JFrame {
     }//GEN-LAST:event_ComenzarBatallasActionPerformed
 
     private void AgregarBatallaRealizarBatallasBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarBatallaRealizarBatallasBtActionPerformed
-        // TODO add your handling code here:
-        Guerrero a;
+
         Batallas.add(new Batalla(
                 Guerreros.get(Guerrero1BatallasCb.getSelectedIndex()),
                 Guerreros.get(Guerrero2BatallasCb.getSelectedIndex())));
@@ -904,6 +913,28 @@ public class VentanaPrincipalLab7 extends javax.swing.JFrame {
         }
         TablaBatallas.setModel(modelo);
     }//GEN-LAST:event_AgregarBatallaRealizarBatallasBtActionPerformed
+
+    private void BatallasTpStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_BatallasTpStateChanged
+        // TODO add your handling code here:
+        if (BatallasTp.getSelectedIndex()==1) {
+            Tabla.setModel(new javax.swing.table.DefaultTableModel(
+                    new Object[][]{},
+                    new String[]{
+                        "Guerrero 1","Guerrero 2","Bitacora"
+                    }
+            ));
+            DefaultTableModel modelo = (DefaultTableModel) TablaListar.getModel();
+            for (Reporte t : Reportes) {
+                Object[] fila = {
+                    t.getG1(),
+                    t.getG2(),
+                    t.getReporte()
+                };
+                modelo.addRow(fila);
+            }
+            Tabla.setModel(modelo);
+        }
+    }//GEN-LAST:event_BatallasTpStateChanged
 
     /**
      * @param args the command line arguments
@@ -980,6 +1011,7 @@ public class VentanaPrincipalLab7 extends javax.swing.JFrame {
     private javax.swing.JMenuItem SalirMn;
     private javax.swing.JTextField SaludAgregarAlumnoTf;
     private javax.swing.JTextField SaludAgregarGuerreroTf;
+    private javax.swing.JTable Tabla;
     private javax.swing.JTable TablaBatallas;
     private javax.swing.JTable TablaListar;
     private javax.swing.JLabel jLabel1;
@@ -1012,7 +1044,6 @@ public class VentanaPrincipalLab7 extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane4;
-    private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
     static ArrayList<Guerrero> Guerreros = new ArrayList();
     static ArrayList<Batalla> Batallas = new ArrayList();

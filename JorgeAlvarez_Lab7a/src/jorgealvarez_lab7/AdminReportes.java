@@ -13,7 +13,7 @@ import javax.swing.JOptionPane;
 public class AdminReportes {
 
     private ArrayList<Reporte> listaReportes = new ArrayList();
-    private File archivo = null;
+    private File archivo = new File("./Reportes");
 
     public AdminReportes() {
     }
