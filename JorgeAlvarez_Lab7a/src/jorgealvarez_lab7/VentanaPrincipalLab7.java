@@ -917,13 +917,16 @@ public class VentanaPrincipalLab7 extends javax.swing.JFrame {
     private void BatallasTpStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_BatallasTpStateChanged
         // TODO add your handling code here:
         if (BatallasTp.getSelectedIndex()==1) {
+            AdminReportes adm=new AdminReportes();
+            adm.cargarArchivoBinario();
+            Reportes=adm.getlistaReportes();
             Tabla.setModel(new javax.swing.table.DefaultTableModel(
                     new Object[][]{},
                     new String[]{
                         "Guerrero 1","Guerrero 2","Bitacora"
                     }
             ));
-            DefaultTableModel modelo = (DefaultTableModel) TablaListar.getModel();
+            DefaultTableModel modelo = (DefaultTableModel) Tabla.getModel();
             for (Reporte t : Reportes) {
                 Object[] fila = {
                     t.getG1(),

@@ -5,13 +5,14 @@
  */
 package jorgealvarez_lab7;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
  *
  * @author ofici
  */
-public class Reporte {
+public class Reporte implements Serializable {
 
     private Guerrero g1, g2;
     private String reporte;
