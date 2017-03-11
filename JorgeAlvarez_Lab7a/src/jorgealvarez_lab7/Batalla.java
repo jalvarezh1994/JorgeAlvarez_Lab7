@@ -29,11 +29,13 @@ public class Batalla extends Thread{
             Bitacora+="El ganador es: "+Guerrero1;
             adm.cargarArchivoBinario();
             adm.getlistaReportes().add(new Reporte(Guerrero1, Guerrero2, Bitacora));
+            adm.escribirArchivo();
         }else{
             System.out.println("El ganador es: "+Guerrero2);
             Bitacora+="El ganador es: "+Guerrero2;
             adm.cargarArchivoBinario();
             adm.getlistaReportes().add(new Reporte(Guerrero1, Guerrero2, Bitacora));
+            adm.escribirArchivo();
         }
     }
 
